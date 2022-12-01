@@ -1,0 +1,113 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    var roles = (List<IdentityRole>)ViewData["roles"];
+    Layout = "~/Views/Shared/_RegisterVal.cshtml";
+}
+@inject SignInManager<UPUser> SignInManager
+@inject UserManager<UPUser> UserManager
+
+<body>
+<section class="w3l-hotair-form">
+    <h1>Registration Form</h1>
+    <div class="container">
+        <!-- /form -->
+        <div class="workinghny-form-grid">
+            <div class="main-hotair">
+                <div class="content-wthree">
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h2>Create a new account.</h2>
+                        <hr />
+                            <div class="row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-floating">
+                            <input asp-for="Input.Firstname" class="form-control" autocomplete="firstname" aria-required="true" />
+                            <label asp-for="Input.Firstname"></label>
+                            <span asp-validation-for="Input.Firstname" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating">
+                            <input asp-for="Input.Lastname" class="form-control" autocomplete="lastname" aria-required="true" />
+                            <label asp-for="Input.Lastname"></label>
+                            <span asp-validation-for="Input.Lastname" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating">
+                            <input asp-for="Input.Middlename" class="form-control" autocomplete="middlename" aria-required="true" />
+                            <label asp-for="Input.Middlename"></label>
+                            <span asp-validation-for="Input.Middlename" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating">
+                            <input asp-for="Input.Title" class="form-control" autocomplete="title" aria-required="true" />
+                            <label asp-for="Input.Title"></label>
+                            <span asp-validation-for="Input.Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating">
+                            <input asp-for="Input.Gender" class="form-control" autocomplete="gender" aria-required="true" />
+                            <label asp-for="Input.Gender"></label>
+                            <span asp-validation-for="Input.Gender" class="text-danger"></span>
+                        </div>
+                            <div class="form-floating">
+                                <input asp-for="Input.Email" class="form-control" autocomplete="email" aria-required="true" />
+                                <label asp-for="Input.Email"></label>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="align-self">
+                                <div class="left_grid_info">
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Address" class="form-control" autocomplete="address" aria-required="true" />
+                                        <label asp-for="Input.Address"></label>
+                                        <span asp-validation-for="Input.Address" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Usern" class="form-control" autocomplete="username" aria-required="true" />
+                                        <label asp-for="Input.Usern"></label>
+                                        <span asp-validation-for="Input.Usern" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                                        <label asp-for="Input.Password"></label>
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                                        <label asp-for="Input.ConfirmPassword"></label>
+                                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                    </div>
+                                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                                    {
+                                        <div class="form-group">
+                                            <label asp-for="Input.Role"></label>
+                                            <select asp-for="Input.Role" asp-controller="Role" class="form-control" asp-items='new SelectList(roles, "Id", "Name")'>
+                                            </select>
+                                            <span asp-validation-for="Input.Role" class="text-danger"></span>
+                                        </div>
+                                    }
+
+
+
+                                </div>
+                            </div>
+                            
+                               
+
+                            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                    </div>
+                                <p class="account">
+                                    Already have an account?
+                                    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Login</a>
+                                </p>
+               
+                        </form>
+                    </div>
+            </div>
+        </div>
+        <!-- //form -->
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+</body>
+

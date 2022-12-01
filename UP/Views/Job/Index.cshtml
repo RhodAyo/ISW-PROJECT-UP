@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Job>
+<div class="container shadow p-5">
+
+    <div class="col mb-3">
+        <a asp-controller="Job" asp-action="Create" class="btn btn-lg btn-primary"><i class="bi bi-file-plus-fill"></i>Add Employee</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Job Name</th>
+                <th scope="col">Job Description</th>
+                <th scope="col">Job Category</th>
+                <th scope="col">Job Salary</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="20%">
+                        @item.Jobname
+                    </td>
+                    <td width="20%">
+                        @item.JobDes
+                    </td>
+                    <td width="25%">
+                        @item.jobcat
+                    </td>
+                    <td width="20%">
+                        @item.JobSalary
+                    </td>
+                    <td>
+                        <div role="group" class="w-60 btn-group">
+                            <a asp-controller="Job" asp-action="Edit" asp-route-id="@item.JobID" class=" btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i>Edit</a>&nbsp;
+                            <a asp-controller="Job" asp-action="Delete" asp-route-id="@item.JobID" class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

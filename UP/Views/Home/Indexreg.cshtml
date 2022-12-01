@@ -1,0 +1,352 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_RegisterPartial.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    @*header*@
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span>UP</span></a></h1>
+            </div>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow mb-3" id="navbar">
+                <div class="container-fluid">
+                    @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UP</a>*@
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul>
+                            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                            @*  <ul class="navbar-nav flex-grow-1">*@
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">Role</a>
+                            </li>
+                            @* </ul>*@
+                            <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+                            @*<li><a class="nav-link scrollto" href="#services">Services</a></li>*@
+                            @* <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+                            <li><a class="nav-link scrollto" href="#team">Team</a></li>*@
+                            <li class="dropdown">
+                                <a href="#services"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li class="dropdown">
+                                        <a href="#"><span>Jobs</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Skilled Jobs</a></li>
+                                            <li><a href="#">Unskilled Jobs</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#services"><span>Trainings</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Skilled Trainings</a></li>
+                                            <li><a href="#">Unskilled Trainings</a></li>
+                                        </ul>
+                                    </li>
+                                    @*<li><a href="#">Drop Down 2</a></li>*@
+                                </ul>
+                            </li>
+                            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <partial name="_LayoutReg" />
+                    </div>
+                </div>
+            </nav>
+
+
+
+        </div>
+
+    </header><!-- End Header -->
+    <!-- Hero Section  -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1><span class="auto-type"></span></h1>
+                    <h2>Sign up today to get rightly linked to jobs based on skill level and trainings that levels you UP!</h2>
+                    <div>
+                        <a asp-area="Identity" asp-page="/Account/Login" class="btn-get-started scrollto">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                    <img src="~/img/hero-img.png" class="img-fluid animated" alt="hero-image">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="row justify-content-between">
+                    <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                        <img src="~/images/1.png" class="img-fluid" alt="" data-aos="zoom-in">
+                    </div>
+                    <div class="col-lg-6 pt-5 pt-lg-0">
+                        <div class="section-title">
+                            <h2>About Us</h2>
+                            <p>Get to know more about us!</p>
+                        </div>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                            UP - A company with over n - number of users, over the years have redefined the approach in accessing Jobs around you. With each milestone achieved, the team at UP have achieved better excellence over time
+                            and also have been able to deliver more products with time.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <i class="bx bx-receipt"></i>
+                                <h4>Vision</h4>
+                                <p>To be one of top service provider/solutions in the area of employment and self-development</p>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>Mission</h4>
+                                <p>To provide easy accessible jobs to individuals and also help upskill them with trainings in their field of interest.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>Check out the great services we offer</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4 class="title"><a href="">Magni Dolores</a></h4>
+                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-world"></i></div>
+                            <h4 class="title"><a href="">Nemo Enim</a></h4>
+                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+     
+        <!-- ======= F.A.Q Section ======= -->
+        <section id="faq" class="faq">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>F.A.Q</h2>
+                    <p>Frequently Asked Questions</p>
+                </div>
+
+                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">How do I sign up for Jobs around me? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Ensure you are registered on the system and your login is successful to allow access to the features.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Are there charging fees for application to both Jobs and Trainings? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                For Jobs, there are no charging fees. You register and get assigned a Job for FREE,this applies to <span font-style="italics">Free Trainings</span> as well, but Paid training attracts a cost.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">What is the best way to qualify for a job? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                All Jobs have different criterias attached to them, ensure to follow their description and stay within requirements.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Can prices be negotiable for unskilled jobs? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Yes definitely! Due to the nature of the job, fees paid are negotaiated between applicants and Job Provider
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section><!-- End F.A.Q Section -->
+        <!-- ======= Contact Us Section ======= -->
+        <section id="contact" class="contact  section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Contact us the get started</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>Building 7A, Oko-Awo 106104, Lagos, LAG, Nigeria</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>rhodayo10@gmail.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+234 903 555 9839</p>
+                            </div>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.731000299442!2d3.4276179!3d6.428594500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf52fd718107b%3A0x81f15722300f1864!2sOko%20Awo%20St%2C%20Victoria%20Island%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1669388851917!5m2!1sen!2sng" style="border:0; width: 100%; height: 290px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <img src="~/images/1.png" class="img-fluid" alt="" data-aos="zoom-in" width="500"
+                             height="200">
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Contact Us Section -->
+
+    </main>
+
+    @* FOOTER*@
+    <footer id="footer">
+        <section class="section-bg">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>UP</h3>
+                        <p>
+                            Building 7A, <br>
+                            Oko-Awo 106104,Lagos, LAG<br>
+                            Nigeria <br><br>
+                            <strong>Phone:</strong> +234 903 555 9839<br>
+                            <strong>Email:</strong> rhodayo10@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#faq">FAQS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i>  <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Unskilled Jobs</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Skilled Jobs</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Unskilled Trainings</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Skilled Jobs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Contact us further for any support via any of these social media links</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>UP</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </section>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["UP Skill", "UP Grade", "Level UP!"],
+            typeSpeed: 200,
+            backSpeed: 150,
+            loop: true
+        })
+    </script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

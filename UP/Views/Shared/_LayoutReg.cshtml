@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Identity
+@using UP.Areas.Identity.Data
+@inject SignInManager<UPUser> SignInManager
+@inject UserManager<UPUser> UserManager
+
+<ul class="navbar-nav">
+ 
+        <li><a class="getstarted" asp-area="Identity" asp-page="/Account/Loginreg">Login</a> </li>
+        @*<li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>*@
+</ul>
